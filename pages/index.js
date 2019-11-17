@@ -1,8 +1,5 @@
 import React, { useEffect } from 'react';
 import Container from '@material-ui/core/Container';
-import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import MuiLink from '@material-ui/core/Link';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -10,21 +7,9 @@ import ComponentIndexPage from '../component/Index';
 import { withRedux } from '../lib/redux';
 import { getConfig } from '../lib/action/AppAction';
 import { i18n, Link, withTranslation } from '../i18n';
+import Header from '../component/Header';
+import Footer from '../component/Footer';
 
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      Copyright ©
-      <MuiLink color="inherit" href="https://material-ui.com/">
-        Your Website
-      </MuiLink>
-      {' '}
-      {new Date().getFullYear()}
-      .
-    </Typography>
-  );
-}
 
 const Index = (props) => {
   console.log(props, 'props');
@@ -35,21 +20,10 @@ const Index = (props) => {
   }, []);
 
   return (
-    <Container maxWidth="sm">
-      <Box my={4}>
-        <Typography variant="h4" component="h1" gutterBottom>
-          <button
-            type="button"
-            onClick={() => i18n.changeLanguage((i18n.language === 'en' ? 'de' : 'en'))}
-          >
-            change locale
-          </button>
-
-          {t('title')}
-        </Typography>
-        <ComponentIndexPage t={t} />
-        <Copyright />
-      </Box>
+    <Container>
+      <Header />
+      <ComponentIndexPage t={t} />
+      <Footer />
     </Container>
   );
 };

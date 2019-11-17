@@ -1,31 +1,48 @@
 
-import React, {useEffect} from 'react';
-import { styled } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { withTranslation } from '../i18n'
-import Router from 'next/router'
+import { Paper, Grid } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 
-const MyButton = styled(Button)({
-  background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
-  border: 0,
-  borderRadius: 3,
-  boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
-  color: 'white',
-  height: 48,
-  padding: '0 30px',
-});
+const useStyles = makeStyles(theme => ({
+  root: {
+    flexGrow: 1,
+  },
+  paper: {
+    height: 140,
+    width: 100,
+  },
+  control: {
+    padding: theme.spacing(2),
+  },
+}));
 
 const ComponentIndexPage = (props) => {
-  console.log(props, "chilsProps")
-  const {t} = props;
-  return <MyButton>{t('title')}</MyButton>;
+  const [spacing, setSpacing] = React.useState(2);
+
+  const classes = useStyles();
+  const { t } = props;
+  return (
+    <Grid container className={classes.root} spacing={2}>
+      <Grid item xs={12}>
+        <Grid container justify="center" spacing={spacing}>
+          {[0, 1, 2].map(value => (
+            <Grid key={value} item>
+              <Paper className={classes.paper} />
+            </Grid>
+          ))}
+        </Grid>
+      </Grid>
+    </Grid>
+
+  );
 }
 
 const mapStateToProps = state => {
-  return {config: state}
+  return { config: state }
 }
 
 ComponentIndexPage.propTypes = {
