@@ -11,7 +11,6 @@ import { appWithTranslation } from '../i18n'
 
 class MyApp extends App {
   componentDidMount() {
-    // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
       jssStyles.parentElement.removeChild(jssStyles);
@@ -27,7 +26,6 @@ class MyApp extends App {
             <title>Evex</title>
           </Head>
           <ThemeProvider theme={theme}>
-            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
             <Component {...pageProps} />
           </ThemeProvider>

@@ -11,8 +11,6 @@ import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 
-// import { withI18next } from "../lib/withI18next";
-
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -73,8 +71,5 @@ const mapDispatchToProps = dispatch => {
     getConfig: bindActionCreators(getConfig, dispatch)
   }
 }
-// const mapStateToProps = state => {
-//   return {config: state}
-// }
 
 export default withTranslation('common')(withRedux(connect(null, mapDispatchToProps)(Index)))
