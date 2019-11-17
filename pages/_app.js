@@ -6,9 +6,10 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../Component/theme';
 import { NamespacesConsumer, I18nextProvider } from "react-i18next";
 import initialI18nInstance from "../i18n";
+import { appWithTranslation } from '../i18n'
 
 
-export default class MyApp extends App {
+class MyApp extends App {
   componentDidMount() {
     // Remove the server-side injected CSS.
     const jssStyles = document.querySelector('#jss-server-side');
@@ -22,11 +23,6 @@ export default class MyApp extends App {
     const { i18n, initialI18nStore, initialLanguage } = pageProps || {};
     return (
       <React.Fragment>
-        <I18nextProvider
-          i18n={i18n || initialI18nInstance}
-          initialI18nStore={initialI18nStore}
-          initialLanguage={initialLanguage}
-        >
           <Head>
             <title>Evex</title>
           </Head>
@@ -35,8 +31,9 @@ export default class MyApp extends App {
             <CssBaseline />
             <Component {...pageProps} />
           </ThemeProvider>
-        </I18nextProvider>
       </React.Fragment>
     );
   }
 }
+
+export default appWithTranslation(MyApp);

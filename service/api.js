@@ -1,17 +1,17 @@
 import axios from "axios";
 
 const devApi = axios.create({
-  baseURL: process.env.API_HOST
+  baseURL: 'http://www.mocky.io/v2/',
+  headers: { 'Content-Type':'application/json' }
 })
-debugger;
 
 export const getRequest = async (url, callback) => {
   try {
     const res = await devApi.get(url);
 
     if(Number(res.data.code) == 400 ) alert("Error")
-    if(res.data.sucessResponse) {
-      callback(res.data.data)
+    if(res.data) {
+      callback(res.data)
     }
   }
   catch(error) {

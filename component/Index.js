@@ -2,9 +2,10 @@
 import React, {useEffect} from 'react';
 import { styled } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
-import { getConfig } from '../lib/action/AppAction'
-import { Trans } from 'react-i18next'
+import { withTranslation } from '../i18n'
+
 
 const MyButton = styled(Button)({
   background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -16,13 +17,18 @@ const MyButton = styled(Button)({
   padding: '0 30px',
 });
 
-const ComponentIndexPage = ({getConfig}) => {
-  useEffect(() => {
-    getConfig()
-  }, [])
-  return <MyButton><Trans i18nKey='common:title'>Styled with styled-components API</Trans></MyButton>;
+const ComponentIndexPage = (props) => {
+  console.log(props, "chilsProps")
+  const {t} = props;
+  return <MyButton>{t('title')}</MyButton>;
 }
-const mapDispatchFromProps = {
-  getConfig
+
+const mapStateToProps = state => {
+  return {config: state}
 }
-export default connect(null, mapDispatchFromProps)(ComponentIndexPage);
+
+ComponentIndexPage.propTypes = {
+  t: PropTypes.func.isRequired,
+}
+
+export default withTranslation('common')(connect(mapStateToProps, null)(ComponentIndexPage));
