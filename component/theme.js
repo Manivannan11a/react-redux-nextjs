@@ -17,7 +17,7 @@ const theme = createMuiTheme({
     },
     default: {
       fontSize: '8px',
-      background: '#ccc',
+      background: '#fff',
     }
   },
 });

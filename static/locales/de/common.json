@@ -1,3 +1,26 @@
 {
-  "title": "Styled with styled-components API - de"
+  "appName": "EVEX - de",
+  "meetingSapce": "Meeting Sapce",
+  "capacity": "Capacity",
+  "totalRooms": "Total Rooms",
+  "footFall": "Footfall",
+  "amenities": "Amenities",
+  "sqUnit": "sq. ft.",
+  "addToEvent": "Add To Event",
+  "roomFeature": "Room Feature and Guest Services",
+  "facilities": "Facilities",
+  "busService": "Bus Services",
+  "venueAccessibility": "Venue Accessibility",
+  "meetingRoom": "Meeting Room",
+  "roomSize": "Room Size",
+  "ceilingHeight": "Ceiling Height",
+  "roomDimentions": "Room Dimentions",
+  "maximumCapacity": "Maximum Capacity",
+  "uShape": "U - Shape",
+  "banquetRounds": "Banquet Rounds",
+  "cocktailRounds": "Cocktail Rounds",
+  "theater": "Theater",
+  "classRoom": "Class Room",
+  "boardRoom": "Board Room",
+  "viewDetails": "View Details"
 }

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import Container from '@material-ui/core/Container';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
@@ -9,6 +9,9 @@ import { getConfig } from '../lib/action/AppAction';
 import { i18n, Link, withTranslation } from '../i18n';
 import Header from '../component/Header';
 import Footer from '../component/Footer';
+import DetailsPage from '../component/DetailsPage';
+import Amenities from '../component/Amenities';
+import TableDetails from '../component/TableDetails';
 
 
 const Index = (props) => {
@@ -20,11 +23,15 @@ const Index = (props) => {
   }, []);
 
   return (
-    <Container>
-      <Header />
-      <ComponentIndexPage t={t} />
-      <Footer />
-    </Container>
+    <Fragment>
+      <Header t={t}/>
+      <Container>
+        <ComponentIndexPage t={t} />
+        <DetailsPage />
+        <Amenities />
+        <TableDetails />
+      </Container>
+    </Fragment>
   );
 };
 
