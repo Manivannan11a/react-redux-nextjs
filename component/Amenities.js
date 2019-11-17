@@ -18,6 +18,9 @@ const useStyles = makeStyles(theme => ({
   margin: {
     margin: theme.spacing(1),
   },
+  spacingTop: {
+    marginTop: '15px'
+  }
 }));
 
 const Amenities = (props) => {
@@ -26,7 +29,7 @@ const Amenities = (props) => {
   const { t } = props;
   return (
     <div>
-      <Grid container item xs={12} spacing={spacing}>
+      <Grid container item xs={12} spacing={spacing} className={classes.spacingTop}>
         <Grid xs={12} item>
             <Typography variant="h6" gutterBottom>{t('amenities')}</Typography>
         </Grid>

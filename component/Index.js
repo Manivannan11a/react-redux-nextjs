@@ -28,7 +28,6 @@ const useStyles = makeStyles(theme => ({
 const ComponentIndexPage = props => {
   const [spacing, setSpacing] = React.useState(2);
   const classes = useStyles();
-  const { t } = props;
   const { responseObject } = props.config.config;
   const images = (((responseObject || {}).venue || {}).images || []);
 

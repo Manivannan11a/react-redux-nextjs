@@ -8,13 +8,6 @@ import Typography from '@material-ui/core/Typography';
 
 
 const useStyles = makeStyles(theme => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    height: 140,
-    width: 100,
-  },
   control: {
     padding: theme.spacing(8),
   },
@@ -32,14 +25,15 @@ const DetailsPage = (props) => {
   const { t } = props;
   const { responseObject } = props.config.config;
   const details = ((responseObject || {}).venue || {});
-  console.log(responseObject, "responseObject")
+
   return (
     <Grid container item xs={12} spacing={spacing} className={classes.spacingTop}>
       <Grid xs={6} item>
         <Grid xs={8} item>
           <Typography variant="h5" component="h1" gutterBottom>{details.name}</Typography>
+          <Typography variant="subtitle1" component="h1" gutterBottom>Bellary Road, Bangalore</Typography>
         </Grid>
-        <Grid container xs={12} item spacing={spacing}>
+        <Grid container xs={12} item spacing={spacing} className={classes.spacingTop}>
           <Grid xs={5} item>
             <Typography variant="subtitle1" gutterBottom>
               <strong>{t('meetingSapce')}</strong>

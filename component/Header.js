@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
+import { withTranslation } from '../i18n'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -35,4 +36,4 @@ const Header = ({t}) => {
   );
 }
 
-export default Header;
+export default withTranslation('common')(Header);

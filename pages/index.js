@@ -8,14 +8,12 @@ import { withRedux } from '../lib/redux';
 import { getConfig } from '../lib/action/AppAction';
 import { i18n, Link, withTranslation } from '../i18n';
 import Header from '../component/Header';
-import Footer from '../component/Footer';
 import DetailsPage from '../component/DetailsPage';
 import Amenities from '../component/Amenities';
 import TableDetails from '../component/TableDetails';
 
 
 const Index = (props) => {
-  console.log(props, 'props');
   const { t, getConfig } = props;
 
   useEffect(() => {
@@ -24,9 +22,9 @@ const Index = (props) => {
 
   return (
     <Fragment>
-      <Header t={t}/>
+      <Header/>
       <Container>
-        <ComponentIndexPage t={t} />
+        <ComponentIndexPage />
         <DetailsPage />
         <Amenities />
         <TableDetails />
