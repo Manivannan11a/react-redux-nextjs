@@ -36,26 +36,26 @@ const Amenities = (props) => {
         <Grid container item xs={12} spacing={spacing}>
           <Grid xs={3} item>
               <Typography variant="subtitle2" gutterBottom>{t('roomFeature')}</Typography>
-              {data.map((a) => (
-                <Typography variant="body2" gutterBottom>{a.name}</Typography>
+              {data.map((a, key) => (
+                <Typography key={key+"_1"} variant="body2" gutterBottom>{a.name}</Typography>
               ))}
           </Grid>
           <Grid xs={3} item>
               <Typography variant="subtitle2" gutterBottom>{t('facilities')}</Typography>
-              {data.map((a) => (
-                <Typography variant="body2" gutterBottom>{a.name}</Typography>
+              {data.map((a, key) => (
+                <Typography key={key+"_2"} variant="body2" gutterBottom>{a.name}</Typography>
               ))}
           </Grid>
           <Grid xs={3} item>
               <Typography variant="subtitle2" gutterBottom>{t('busService')}</Typography>
-              {data.map((a) => (
-                <Typography variant="body2" gutterBottom>{a.name}</Typography>
+              {data.map((a, key) => (
+                <Typography key={key+"_3"} variant="body2" gutterBottom>{a.name}</Typography>
               ))}
           </Grid>
           <Grid xs={3} item>
               <Typography variant="subtitle2" gutterBottom>{t('venueAccessibility')}</Typography>
-              {data.map((a) => (
-                <Typography variant="body2" gutterBottom>{a.name}</Typography>
+              {data.map((a, key) => (
+                <Typography key={key+"_4"} variant="body2" gutterBottom>{a.name}</Typography>
               ))}
           </Grid>
         </Grid>
