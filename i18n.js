@@ -13,7 +13,7 @@ const localeSubpathVariations = {
 }
 
 module.exports = new NextI18Next({
-  defaultLanguage: 'de',
+  defaultLanguage: 'en',
   otherLanguages: ['en', 'de'],
   localeSubpaths: localeSubpathVariations[localeSubpaths],
   keySeparator: false
